@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWS记忆游戏 - 官方粉丝站</title>
+    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="2.css">
+    <link rel="stylesheet" href="3.css">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <meta name="description" content="TWS记忆配对游戏，挑战你的记忆力，找出所有匹配的TWS成员卡牌">
+    <meta name="keywords" content="TWS游戏, 记忆游戏, 卡牌游戏, TWS成员配对">
+    <meta name="author" content="TWS官方粉丝站">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">
+        <i class="ri-sun-line light-icon"></i>
+        <i class="ri-moon-line dark-icon"></i>
+    </button>
+
+    <div id="skeleton-loader" class="skeleton-loader">
+        <div class="skeleton-header"></div>
+        <div class="skeleton-content">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TWS</span>
+                    <span class="logo-subtitle">TWENTY FOUR SEVEN WITH US</span>
+                </a>
+                
+                <button class="nav-toggle" id="nav-toggle" aria-label="导航菜单">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">首页</a></li>
+                    <li><a href="2.html" class="nav-link">成员介绍</a></li>
+                    <li><a href="3.html" class="nav-link">演艺经历</a></li>
+                    <li><a href="4.html" class="nav-link">获奖记录</a></li>
+                    <li><a href="game.html" class="nav-link active">记忆游戏</a></li>
+                    <li><a href="5.html" class="nav-link">影音中心</a></li>
+                </ul>
+                
+                <div class="nav-extra">
+                    <button class="search-btn" aria-label="搜索">
+                        <i class="ri-search-line"></i>
+                    </button>
+                    <button class="music-player-btn" id="music-player-toggle" aria-label="音乐播放器">
+                        <i class="ri-music-2-line"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="game-section">
+            <div class="container">
+                <div class="game-header" data-aos="fade-up">
+                    <h1 class="game-title">TWS记忆配对游戏</h1>
+                    <p class="game-description">找出所有匹配的TWS成员卡牌，考验你的记忆力！</p>
+                </div>
+                <div class="game-controls" data-aos="fade-up">
+                    <div class="control-buttons">
+                        <button class="btn" id="start-game">开始游戏</button>
+                        <button class="btn btn-secondary" id="restart-game">重新开始</button>
+                        <div class="difficulty-selector">
+                            <label for="difficulty">难度:</label>
+                            <select id="difficulty">
+                                <option value="easy">简单 (4对)</option>
+                                <option value="medium" selected>困难 (6对)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-stats" data-aos="fade-up">
+                    <div class="stat">
+                        <div class="stat-icon">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="time-value">0s</div>
+                            <div class="stat-label">时间</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat">
+                        <div class="stat-icon">
+                            <i class="ri-refresh-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="moves-value">0</div>
+                            <div class="stat-label">移动次数</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat">
+                        <div class="stat-icon">
+                            <i class="ri-star-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="score-value">0</div>
+                            <div class="stat-label">得分</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat">
+                        <div class="stat-icon">
+                            <i class="ri-checkbox-circle-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="matches-value">0/6</div>
+                            <div class="stat-label">匹配对数</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-board" id="game-board" data-aos="fade-up">
+                </div>
+                <div class="game-instructions" data-aos="fade-up">
+                    <h3 class="instructions-title">游戏说明</h3>
+                    <div class="instructions-content">
+                        <div class="instruction">
+                            <div class="instruction-icon">
+                                <i class="ri-gamepad-line"></i>
+                            </div>
+                            <p>点击卡片翻开，找出所有相同的TWS成员卡牌</p>
+                        </div>
+                        <div class="instruction">
+                            <div class="instruction-icon">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <p>用时越少，移动次数越少，得分越高</p>
+                        </div>
+                        <div class="instruction">
+                            <div class="instruction-icon">
+                                <i class="ri-trophy-line"></i>
+                            </div>
+                            <p>完成所有匹配即可获胜，挑战最高分！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-result" id="game-result">
+                </div>
+
+                <div class="leaderboard" data-aos="fade-up">
+                    <h3 class="leaderboard-title">高分榜</h3>
+                    <div class="leaderboard-content">
+                        <table class="leaderboard-table">
+                            <thead>
+                                <tr>
+                                    <th>排名</th>
+                                    <th>玩家</th>
+                                    <th>得分</th>
+                                    <th>用时</th>
+                                    <th>移动次数</th>
+                                    <th>日期</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboard-body">
+                                <tr>
+                                    <td>1</td>
+                                    <td>rainyin-99</td>
+                                    <td>1250</td>
+                                    <td>45s</td>
+                                    <td>18</td>
+                                    <td>2024.05.20</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>WITH_US_99</td>
+                                    <td>1120</td>
+                                    <td>52s</td>
+                                    <td>20</td>
+                                    <td>2024.05.18</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>SHINYU_Lover</td>
+                                    <td>980</td>
+                                    <td>60s</td>
+                                    <td>22</td>
+                                    <td>2024.05.15</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>TWS_24_7</td>
+                                    <td>890</td>
+                                    <td>68s</td>
+                                    <td>25</td>
+                                    <td>2024.05.12</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>wonhui-99</td>
+                                    <td>780</td>
+                                    <td>75s</td>
+                                    <td>28</td>
+                                    <td>2024.05.10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="music-player" class="music-player">
+        <div class="player-container">
+            <div class="player-info">
+                <img src="./mini1.jpg" alt="TWS专辑封面" class="album-cover">
+                <div class="track-info">
+                    <h3 class="track-title">plot twist</h3>
+                    <p class="track-artist">TWS</p>
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <button class="control-btn prev-btn" aria-label="上一首">
+                    <i class="ri-skip-back-line"></i>
+                </button>
+                <button class="control-btn play-btn" id="play-btn" aria-label="播放">
+                    <i class="ri-play-fill"></i>
+                </button>
+                <button class="control-btn next-btn" aria-label="下一首">
+                    <i class="ri-skip-forward-line"></i>
+                </button>
+            </div>
+            
+            <div class="player-progress">
+                <span class="current-time">0:00</span>
+                <input type="range" class="progress-bar" id="progress-bar" min="0" max="100" value="0" aria-label="播放进度">
+                <span class="duration">3:25</span>
+            </div>
+            
+            <div class="player-volume">
+                <button class="volume-btn" id="volume-btn" aria-label="音量">
+                    <i class="ri-volume-up-line"></i>
+                </button>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="80" aria-label="音量调节">
+            </div>
+            
+            <button class="player-close" id="player-close" aria-label="关闭播放器">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">TWS官方粉丝站</h3>
+                    <p class="footer-description">TWENTY FOUR SEVEN WITH US</p>
+                    <p class="footer-copyright">© 2024-2026 TWS Fansite. 本网站为粉丝创作，非官方站点。</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">关注TWS</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Weibo">
+                            <i class="ri-weibo-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let gameStarted = false;
+            let gameTime = 0;
+            let gameTimer = null;
+            let moves = 0;
+            let score = 0;
+            let matches = 0;
+            let totalPairs = 6; // 默认中等难度
+            let flippedCards = [];
+            let matchedCards = [];
+
+            const members = [
+                { id: 1, name: 'SHINYU', color: '#1a6bc4' },
+                { id: 2, name: 'DOHOON', color: '#64b5f6' },
+                { id: 3, name: 'YOUNGJAE', color: '#4fc3f7' },
+                { id: 4, name: 'HANJIN', color: '#2196f3' },
+                { id: 5, name: 'JIHOON', color: '#03a9f4' },
+                { id: 6, name: 'KYUNGMIN', color: '#00bcd4' }
+            ];
+
+            const gameBoard = document.getElementById('game-board');
+            const startBtn = document.getElementById('start-game');
+            const restartBtn = document.getElementById('restart-game');
+            const difficultySelect = document.getElementById('difficulty');
+            const timeValue = document.getElementById('time-value');
+            const movesValue = document.getElementById('moves-value');
+            const scoreValue = document.getElementById('score-value');
+            const matchesValue = document.getElementById('matches-value');
+            const gameResult = document.getElementById('game-result');
+
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            function initGame() {
+                gameStarted = false;
+                gameTime = 0;
+                moves = 0;
+                score = 0;
+                matches = 0;
+                flippedCards = [];
+                matchedCards = [];
+
+                if (gameTimer) {
+                    clearInterval(gameTimer);
+                    gameTimer = null;
+                }
+
+                updateStats();
+
+                gameBoard.innerHTML = '';
+                gameResult.innerHTML = '';
+
+                const difficulty = difficultySelect.value;
+                switch(difficulty) {
+                    case 'easy':
+                        totalPairs = 4;
+                        break;
+                    case 'hard':
+                    default:
+                        totalPairs = 6;
+                        break;
+                }
+
+                const cards = [];
+                const selectedMembers = members.slice(0, totalPairs);
+
+                selectedMembers.forEach(member => {
+                    cards.push({ ...member });
+                    cards.push({ ...member });
+                });
+
+                shuffleArray(cards);
+                
+                cards.forEach((card, index) => {
+                    const cardElement = document.createElement('div');
+                    cardElement.className = 'memory-card';
+                    cardElement.dataset.index = index;
+                    cardElement.dataset.id = card.id;
+                    
+                    cardElement.innerHTML = `
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="ri-question-line"></i>
+                                </div>
+                                <div class="card-text">TWS</div>
+                            </div>
+                            <div class="card-back" style="background-color: ${card.color}">
+                                <div class="card-icon">
+                                    <i class="ri-user-star-line"></i>
+                                </div>
+                                <div class="card-text">${card.name}</div>
+                            </div>
+                        </div>
+                    `;
+
+                    cardElement.addEventListener('click', () => handleCardClick(cardElement, index, card.id));
+                    
+                    gameBoard.appendChild(cardElement);
+                });
+                
+                const cardCount = cards.length;
+                let gridColumns;
+                
+                if (cardCount <= 8) {
+                    gridColumns = 4;
+                } else if (cardCount <= 12) {
+                    gridColumns = 4;
+                } else {
+                    gridColumns = 4;
+                }
+                
+                gameBoard.style.gridTemplateColumns = `repeat(${gridColumns}, 1fr)`;
+            }
+            
+            function startGame() {
+                if (gameStarted) return;
+                
+                gameStarted = true;
+                startBtn.textContent = '游戏中...';
+                startBtn.disabled = true;
+   
+                gameTimer = setInterval(() => {
+                    gameTime++;
+                    updateStats();
+                }, 1000);
+                
+                console.log('🎮 游戏开始！');
+            }
+  
+            function handleCardClick(cardElement, index, cardId) {
+
+                if (!gameStarted) {
+                    showNotification('请先点击"开始游戏"按钮！');
+                    return;
+                }
+
+                if (matchedCards.includes(index) || flippedCards.includes(index)) return;
+
+                if (flippedCards.length >= 2) return;
+                
+                cardElement.classList.add('flipped');
+                flippedCards.push(index);
+
+                if (flippedCards.length === 2) {
+                    moves++;
+                    updateStats();
+                    
+                    const firstCardIndex = flippedCards[0];
+                    const secondCardIndex = flippedCards[1];
+                    
+                    const firstCard = document.querySelector(`.memory-card[data-index="${firstCardIndex}"]`);
+                    const secondCard = document.querySelector(`.memory-card[data-index="${secondCardIndex}"]`);
+                    
+                    const firstCardId = firstCard.dataset.id;
+                    const secondCardId = secondCard.dataset.id;
+   
+                    if (firstCardId === secondCardId) {
+                        handleMatch(firstCardIndex, secondCardIndex);
+                    } else {
+
+                        handleMismatch(firstCardIndex, secondCardIndex);
+                    }
+                }
+            }
+
+            function handleMatch(firstIndex, secondIndex) {
+                matchedCards.push(firstIndex, secondIndex);
+                matches++;
+                
+                const firstCard = document.querySelector(`.memory-card[data-index="${firstIndex}"]`);
+                const secondCard = document.querySelector(`.memory-card[data-index="${secondIndex}"]`);
+                
+                if (firstCard && secondCard) {
+                    firstCard.classList.add('matched');
+                    secondCard.classList.add('matched');
+
+                    firstCard.style.transform = 'scale(1.05)';
+                    secondCard.style.transform = 'scale(1.05)';
+                    
+                    setTimeout(() => {
+                        firstCard.style.transform = '';
+                        secondCard.style.transform = '';
+                    }, 300);
+                }
+
+                flippedCards = [];
+   
+                updateStats();
+   
+                playSound('match');
+    
+                if (matches === totalPairs) {
+                    endGame();
+                }
+            }
+
+            function handleMismatch(firstIndex, secondIndex) {
+
+                playSound('mismatch');
+         
+                setTimeout(() => {
+                    const firstCard = document.querySelector(`.memory-card[data-index="${firstIndex}"]`);
+                    const secondCard = document.querySelector(`.memory-card[data-index="${secondIndex}"]`);
+                    
+                    if (firstCard && secondCard) {
+                        firstCard.classList.remove('flipped');
+                        secondCard.classList.remove('flipped');
+                    }
+                 
+                    flippedCards = [];
+                }, 1000);
+            }
+        
+            function endGame() {
+                gameStarted = false;
+
+                if (gameTimer) {
+                    clearInterval(gameTimer);
+                    gameTimer = null;
+                }
+ 
+                calculateScore();
+
+                showResult();
+
+                startBtn.textContent = '开始游戏';
+                startBtn.disabled = false;
+                
+                console.log(`🎮 游戏结束！得分：${score}`);
+            }
+
+            function calculateScore() {
+ 
+                const baseScore = matches * 100;
+
+                const timeBonus = Math.max(0, 300 - gameTime) * 2;
+
+                const movePenalty = moves * 5;
+      
+                let difficultyMultiplier = 1;
+                switch(difficultySelect.value) {
+                    case 'easy':
+                        difficultyMultiplier = 0.8;
+                        break;
+                    case 'hard':
+                        difficultyMultiplier = 1.5;
+                        break;
+                }
+                
+                score = Math.max(0, Math.floor((baseScore + timeBonus - movePenalty) * difficultyMultiplier));
+            }
+
+            function showResult() {
+                let message = '';
+                let emoji = '🎉';
+                
+                if (score >= 1000) {
+                    message = '太棒了！你是TWS超级粉丝！';
+                    emoji = '🏆';
+                } else if (score >= 700) {
+                    message = '厉害！你对TWS成员非常了解！';
+                    emoji = '⭐';
+                } else if (score >= 400) {
+                    message = '不错！继续努力成为TWS粉丝吧！';
+                    emoji = '👍';
+                } else {
+                    message = '加油！多了解一下TWS成员吧！';
+                    emoji = '💪';
+                }
+                
+                const html = `
+                    <div class="result-content" data-aos="fade-up">
+                        <div class="result-emoji">${emoji}</div>
+                        <h2 class="result-title">游戏完成！</h2>
+                        <div class="result-stats">
+                            <div class="result-stat">
+                                <span class="stat-label">用时</span>
+                                <span class="stat-value">${gameTime}秒</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="stat-label">移动次数</span>
+                                <span class="stat-value">${moves}次</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="stat-label">匹配对数</span>
+                                <span class="stat-value">${matches}/${totalPairs}</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="stat-label">得分</span>
+                                <span class="stat-value">${score}分</span>
+                            </div>
+                        </div>
+                        <p class="result-message">${message}</p>
+                        <div class="result-buttons">
+                            <button class="btn" id="play-again">再玩一次</button>
+                            <button class="btn btn-secondary" id="share-result">分享结果</button>
+                        </div>
+                    </div>
+                `;
+                
+                gameResult.innerHTML = html;
+   
+                const playAgainBtn = document.getElementById('play-again');
+                if (playAgainBtn) {
+                    playAgainBtn.addEventListener('click', () => {
+                        initGame();
+                        gameResult.innerHTML = '';
+                    });
+                }
+        
+                const shareBtn = document.getElementById('share-result');
+                if (shareBtn) {
+                    shareBtn.addEventListener('click', shareResult);
+                }
+            }
+     
+            function shareResult() {
+                const shareText = `我在TWS记忆游戏中获得了${score}分！用时${gameTime}秒，移动${moves}次，匹配了${matches}对卡片。`;
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'TWS记忆游戏结果',
+                        text: shareText,
+                        url: window.location.href
+                    });
+                } else {
+   
+                    navigator.clipboard.writeText(shareText).then(() => {
+                        showNotification('结果已复制到剪贴板！');
+                    });
+                }
+            }
+        
+            function updateStats() {
+                timeValue.textContent = `${gameTime}s`;
+                movesValue.textContent = moves;
+                scoreValue.textContent = score;
+                matchesValue.textContent = `${matches}/${totalPairs}`;
+            }
+      
+            function playSound(type) {
+
+                console.log(`播放音效: ${type}`);
+            }
+         
+            function showNotification(message) {
+
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.textContent = message;
+       
+                document.body.appendChild(notification);
+     
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 10);
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+            }
+       
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+      
+            startBtn.addEventListener('click', startGame);
+            restartBtn.addEventListener('click', initGame);
+            difficultySelect.addEventListener('change', initGame);
+      
+            initGame();
+        });
+    </script>
+    <script src="1.js"></script>
+</body>
+</html>
