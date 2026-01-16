@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWS影音中心 - 官方粉丝站</title>
+    
+   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+ 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="2.css">
+    <link rel="stylesheet" href="3.css">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <meta name="description" content="TWS影音中心：音乐视频、现场表演、综艺节目、幕后花絮等视频内容">
+    <meta name="keywords" content="TWS视频, TWS MV, TWS现场表演, TWS综艺">
+    <meta name="author" content="TWS官方粉丝站">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">
+        <i class="ri-sun-line light-icon"></i>
+        <i class="ri-moon-line dark-icon"></i>
+    </button>
+
+    <div id="skeleton-loader" class="skeleton-loader">
+        <div class="skeleton-header"></div>
+        <div class="skeleton-content">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TWS</span>
+                    <span class="logo-subtitle">TWENTY FOUR SEVEN WITH US</span>
+                </a>
+                
+                <button class="nav-toggle" id="nav-toggle" aria-label="导航菜单">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="1.html" class="nav-link">首页</a></li>
+                    <li><a href="2.html" class="nav-link">成员介绍</a></li>
+                    <li><a href="3.html" class="nav-link">演艺经历</a></li>
+                    <li><a href="4.html" class="nav-link">获奖记录</a></li>
+                    <li><a href="game.html" class="nav-link">记忆游戏</a></li>
+                    <li><a href="5.html" class="nav-link active">影音中心</a></li>
+                </ul>
+                
+                <div class="nav-extra">
+                    <button class="search-btn" aria-label="搜索">
+                        <i class="ri-search-line"></i>
+                    </button>
+                    <button class="music-player-btn" id="music-player-toggle" aria-label="音乐播放器">
+                        <i class="ri-music-2-line"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="media-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h1 class="section-title">TWS影音中心</h1>
+                    <p class="section-subtitle">音乐视频、现场表演、综艺节目、幕后花絮等精彩内容</p>
+                </div>
+
+                <div class="featured-video" data-aos="fade-up">
+                    <h2 class="section-title">推荐视频</h2>
+                    <div class="video-player">
+                        <div class="video-container">
+                            <div class="video-placeholder">
+                                <video controls poster="%E5%87%BA%E9%81%93%E5%B0%81%E9%9D%A2.jpg">
+                                <source src="./%E5%87%BA%E9%81%93.mp4"  type="video/mp4"
+                                        alt="TWS音乐视频" loading="lazy">
+                                </video>
+                                <div class="play-overlay">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">TWS - 'plot twist' MV</h3>
+                            <div class="video-meta">
+                                <span class="video-date">2024年1月22日</span>
+                                <span class="video-views">1,250万次观看</span>
+                                <span class="video-duration">3:34</span>
+                            </div>
+                            <p class="video-description">
+                                TWS出道曲《plot twist》官方音乐视频，展现了成员们的青春活力和出色表演。
+                            </p>
+                            <div class="video-actions">
+                                <button class="btn btn-secondary">
+                                    <i class="ri-thumb-up-line"></i> 喜欢
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="ri-share-line"></i> 分享
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="ri-add-line"></i> 收藏
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="audio-section" data-aos="fade-up">
+                    <h2 class="section-title">TWS音乐</h2>
+                    
+                    <div class="audio-player">
+                        <div class="audio-info">
+                            <audio controls>
+                            <source src="./overdrive.mp3"type="audio/mpeg" alt="TWS音乐" loading="lazy">
+                            </audio>
+                            <div class="audio-details">
+                                <h3 class="audio-title">overdrive</h3>
+                                <p class="audio-artist">TWS</p>
+                                <p class="audio-album">play hard</p>
+                            </div>
+                        </div>
+
+                <div class="media-stats" data-aos="fade-up">
+                    <h2 class="section-title">视频统计</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="ri-video-line"></i>
+                            </div>
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">视频数量</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="ri-eye-line"></i>
+                            </div>
+                            <div class="stat-number">1.2亿+</div>
+                            <div class="stat-label">总观看次数</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="ri-thumb-up-line"></i>
+                            </div>
+                            <div class="stat-number">850万+</div>
+                            <div class="stat-label">总点赞数</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="ri-user-add-line"></i>
+                            </div>
+                            <div class="stat-number">500万+</div>
+                            <div class="stat-label">YouTube订阅者</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="music-player" class="music-player">
+        <div class="player-container">
+            <div class="player-info">
+                <img src="./mini1.jpg" alt="TWS专辑封面" class="album-cover">
+                <div class="track-info">
+                    <h3 class="track-title">plot twist</h3>
+                    <p class="track-artist">TWS</p>
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <button class="control-btn prev-btn" aria-label="上一首">
+                    <i class="ri-skip-back-line"></i>
+                </button>
+                <button class="control-btn play-btn" id="play-btn" aria-label="播放">
+                    <i class="ri-play-fill"></i>
+                </button>
+                <button class="control-btn next-btn" aria-label="下一首">
+                    <i class="ri-skip-forward-line"></i>
+                </button>
+            </div>
+            
+            <div class="player-progress">
+                <span class="current-time">0:00</span>
+                <input type="range" class="progress-bar" id="progress-bar" min="0" max="100" value="0" aria-label="播放进度">
+                <span class="duration">3:25</span>
+            </div>
+            
+            <div class="player-volume">
+                <button class="volume-btn" id="volume-btn" aria-label="音量">
+                    <i class="ri-volume-up-line"></i>
+                </button>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="80" aria-label="音量调节">
+            </div>
+            
+            <button class="player-close" id="player-close" aria-label="关闭播放器">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">TWS官方粉丝站</h3>
+                    <p class="footer-description">TWENTY FOUR SEVEN WITH US</p>
+                    <p class="footer-copyright">© 2024-2026 TWS Fansite. 本网站为粉丝创作，非官方站点。</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">关注TWS</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Weibo">
+                            <i class="ri-weibo-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const videoCards = document.querySelectorAll('.video-card');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const category = this.dataset.category;
+                    videoCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            const audioPlayBtn = document.getElementById('audio-play');
+            const audioProgressBar = document.getElementById('audio-progress-bar');
+            const audioVolumeSlider = document.getElementById('audio-volume-slider');
+            const audioVolumeBtn = document.getElementById('audio-volume-btn');
+            const playlistItems = document.querySelectorAll('.playlist-item');
+            
+            let isAudioPlaying = false;
+            let audioCurrentTime = 0;
+            const audioDuration = 205; 
+            if (audioPlayBtn) {
+                audioPlayBtn.addEventListener('click', function() {
+                    isAudioPlaying = !isAudioPlaying;
+                    
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.className = isAudioPlaying ? 'ri-pause-fill' : 'ri-play-fill';
+                    }
+                    
+                    console.log(`🎵 ${isAudioPlaying ? '正在播放音频' : '音频已暂停'}`);
+                });
+            }
+
+            if (audioProgressBar) {
+                audioProgressBar.addEventListener('input', function() {
+                    audioCurrentTime = (this.value / 100) * audioDuration;
+                    updateAudioTimeDisplay();
+                });
+            }
+            if (audioVolumeSlider) {
+                audioVolumeSlider.addEventListener('input', function() {
+                    const volume = this.value;
+                    updateAudioVolumeIcon(volume);
+                });
+            }
+
+            if (audioVolumeBtn) {
+                audioVolumeBtn.addEventListener('click', function() {
+                    const currentVolume = audioVolumeSlider.value;
+                    
+                    if (currentVolume > 0) {
+                        audioVolumeSlider.dataset.lastVolume = currentVolume;
+                        audioVolumeSlider.value = 0;
+                        updateAudioVolumeIcon(0);
+                    } else {
+                        const lastVolume = audioVolumeSlider.dataset.lastVolume || 80;
+                        audioVolumeSlider.value = lastVolume;
+                        updateAudioVolumeIcon(lastVolume);
+                    }
+                });
+            }
+
+            function simulateAudioPlayback() {
+                if (isAudioPlaying && audioCurrentTime < audioDuration) {
+                    audioCurrentTime += 0.5;
+                    const progressPercent = (audioCurrentTime / audioDuration) * 100;
+                    audioProgressBar.value = progressPercent;
+                    updateAudioTimeDisplay();
+                }
+            }
+            setInterval(simulateAudioPlayback, 500);
+            function updateAudioTimeDisplay() {
+                const currentTimeEl = document.querySelector('.audio-current-time');
+                const durationEl = document.querySelector('.audio-duration');
+                
+                if (currentTimeEl) {
+                    currentTimeEl.textContent = formatTime(audioCurrentTime);
+                }
+                
+                if (durationEl) {
+                    durationEl.textContent = formatTime(audioDuration);
+                }
+            }
+            function updateAudioVolumeIcon(volume) {
+                if (!audioVolumeBtn) return;
+                
+                const icon = audioVolumeBtn.querySelector('i');
+                if (!icon) return;
+                
+                if (volume == 0) {
+                    icon.className = 'ri-volume-mute-line';
+                } else if (volume < 50) {
+                    icon.className = 'ri-volume-down-line';
+                } else {
+                    icon.className = 'ri-volume-up-line';
+                }
+            }
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+
+            playlistItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    playlistItems.forEach(i => i.classList.remove('active'));
+
+                    this.classList.add('active');
+                    const title = this.querySelector('.playlist-item-title').textContent;
+                    const artist = this.querySelector('.playlist-item-artist').textContent;
+                    const audioTitle = document.querySelector('.audio-title');
+                    const audioArtist = document.querySelector('.audio-artist');
+                    
+                    if (audioTitle) audioTitle.textContent = title;
+                    if (audioArtist) audioArtist.textContent = artist;
+
+                    audioCurrentTime = 0;
+                    audioProgressBar.value = 0;
+                    updateAudioTimeDisplay();
+                    
+                    console.log(`🎵 切换到歌曲: ${title} - ${artist}`);
+                });
+            });
+
+            updateAudioTimeDisplay();
+        });
+    </script>
+    <script src="1.js"></script>
+</body>
+</html>

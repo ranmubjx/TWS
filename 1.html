@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWS (TWENTY FOUR SEVEN WITH US) - 官方粉丝站</title>
+    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="2.css">
+    <link rel="stylesheet" href="3.css">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <meta name="description" content="TWS (TWENTY FOUR SEVEN WITH US) 官方粉丝站，提供最新动态、成员介绍、演艺经历、获奖记录和互动游戏">
+    <meta name="keywords" content="TWS, TWENTY FOUR SEVEN WITH US, K-pop, PLEDIS, HYBE, 申晶㬊, 金道勋, 崔英宰, 韩振, 韩志薫, 李炅潣">
+    <meta name="author" content="TWS官方粉丝站">
+    <meta property="og:title" content="TWS (TWENTY FOUR SEVEN WITH US) - 官方粉丝站">
+    <meta property="og:description" content="TWS官方粉丝站，提供最新动态、成员介绍、演艺经历、获奖记录和互动游戏">
+    <meta property="og:image" content="assets/og-image.jpg">
+    <meta property="og:url" content="https://tws-fansite.example.com">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">
+        <i class="ri-sun-line light-icon"></i>
+        <i class="ri-moon-line dark-icon"></i>
+    </button>
+    <div id="skeleton-loader" class="skeleton-loader">
+        <div class="skeleton-header"></div>
+        <div class="skeleton-content">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+    </div>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TWS</span>
+                    <span class="logo-subtitle">TWENTY FOUR SEVEN WITH US</span>
+                </a>
+                
+                <button class="nav-toggle" id="nav-toggle" aria-label="导航菜单">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="1.html" class="nav-link active">首页</a></li>
+                    <li><a href="2.html" class="nav-link">成员介绍</a></li>
+                    <li><a href="3.html" class="nav-link">演艺经历</a></li>
+                    <li><a href="4.html" class="nav-link">获奖记录</a></li>
+                    <li><a href="game.html" class="nav-link">记忆游戏</a></li>
+                    <li><a href="5.html" class="nav-link">影音中心</a></li>
+                </ul>
+                
+                <div class="nav-extra">
+                    <button class="search-btn" aria-label="搜索">
+                        <i class="ri-search-line"></i>
+                    </button>
+                    <button class="music-player-btn" id="music-player-toggle" aria-label="音乐播放器">
+                        <i class="ri-music-2-line"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1 class="hero-title">TWENTY FOUR SEVEN WITH US</h1>
+                    <p class="hero-subtitle">TWS官方粉丝站 - 24小时与你相伴</p>
+                    <p class="hero-description">
+                        TWS是PLEDIS Entertainment于2024年1月22日推出的韩国男子音乐组合，队名含义为"TWENTY FOUR SEVEN WITH US"，寓意"一天24小时、一周7天都与我们在一起"。
+                    </p>
+                </div>
+                
+                <div class="hero-image" data-aos="fade-left">
+                    <img src="./%E5%B0%81%E9%9D%A2.jpg" 
+                         alt="TWS团体照" class="hero-img"
+                         loading="lazy">
+                </div>
+            </div>
+        </section>
+        <section class="highlights-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">最新动态</h2>
+                
+                <div class="highlights-grid">
+                    <div class="highlight-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="highlight-icon">
+                            <i class="ri-album-line"></i>
+                        </div>
+                        <h3 class="highlight-title">新专辑发布</h3>
+                        <p class="highlight-text">第四张迷你专辑《play hard》已正式发行，主打歌《Overdrive》获得热烈反响。</p>
+                    </div>
+                    
+                    <div class="highlight-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="highlight-icon">
+                            <i class="ri-trophy-line"></i>
+                        </div>
+                        <h3 class="highlight-title">获奖记录</h3>
+                        <p class="highlight-text">在第40届金唱片颁奖礼荣获最佳表演奖，这是TWS出道以来获得的第5个主要奖项。</p>
+                    </div>
+                    
+                    <div class="highlight-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="highlight-icon">
+                            <i class="ri-calendar-event-line"></i>
+                        </div>
+                        <h3 class="highlight-title">巡演计划</h3>
+                        <p class="highlight-text">2026年首次世界巡回演唱会"24/7:WITH US"正在筹备中。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="albums-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">音乐作品</h2>
+                
+                <div class="swiper albums-swiper" data-aos="fade-up">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="album-card">
+                                <img src="./mini1.jpg"
+                                     alt="Sparkling Blue专辑封面" class="album-cover"
+                                     loading="lazy">
+                                <div class="album-info">
+                                    <h3 class="album-title">Sparkling Blue</h3>
+                                    <p class="album-date">2024.01.22</p>
+                                    <p class="album-track">主打歌: plot twist</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="album-card">
+                                <img src="./mini2.jpg" 
+                                     alt="SUMMER BEAT!专辑封面" class="album-cover"
+                                     loading="lazy">
+                                <div class="album-info">
+                                    <h3 class="album-title">SUMMER BEAT!</h3>
+                                    <p class="album-date">2024.06.24</p>
+                                    <p class="album-track">主打歌: hey! hey!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="album-card">
+                                <img src="./mini3.jpg" 
+                                     alt="TRY WITH US专辑封面" class="album-cover"
+                                     loading="lazy">
+                                <div class="album-info">
+                                    <h3 class="album-title">TRY WITH US</h3>
+                                    <p class="album-date">2025.04.21</p>
+                                    <p class="album-track">主打歌: If I'm S, Can You Be My N?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section class="members-preview-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">TWS成员</h2>
+                    <p class="section-subtitle">6位各具特色的成员，共同组成TWENTY FOUR SEVEN WITH US</p>
+                </div>
+                
+                <div class="members-preview-grid">
+                    <div class="member-preview" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-preview-image">
+                            <img src="./1%E8%A5%BF%E8%A3%85.jpg" 
+                                 alt="SHINYU" loading="lazy">
+                        </div>
+                        <h3 class="member-preview-name">申惟 (SHINYU)</h3>
+                        <p class="member-preview-role">队长/门面/rap</p>
+                    </div>
+                    
+                    <div class="member-preview" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-preview-image">
+                            <img src="./2%E8%A5%BF%E8%A3%85.jpg" 
+                                 alt="DOHOON" loading="lazy">
+                        </div>
+                        <h3 class="member-preview-name">金道勋 (DOHOON)</h3>
+                        <p class="member-preview-role">ace</p>
+                    </div>
+                    
+                    <div class="member-preview" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member-preview-image">
+                            <img src="./3%E8%A5%BF%E8%A3%85.jpg" 
+                                 alt="YOUNGJAE" loading="lazy">
+                        </div>
+                        <h3 class="member-preview-name">崔英宰 (YOUNGJAE)</h3>
+                        <p class="member-preview-role">主唱</p>
+                    </div>
+                    
+                    <div class="member-preview" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-preview-image">
+                            <img src="./4%E8%A5%BF%E8%A3%85.jpg" 
+                                 alt="SHINYU" loading="lazy">
+                        </div>
+                        <h3 class="member-preview-name">韩振 (HANJIN)</h3>
+                        <p class="member-preview-role">门面</p>
+                    </div>
+                    
+                    <div class="member-preview" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-preview-image">
+                            <img src="./5%E8%A5%BF%E8%A3%85.jpg" 
+                                 alt="DOHOON" loading="lazy">
+                        </div>
+                        <h3 class="member-preview-name">韩志薰（JIHOON）</h3>
+                        <p class="member-preview-role">主舞</p>
+                    </div>
+                    
+                    <div class="member-preview" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member-preview-image">
+                            <img src="./6%E8%A5%BF%E8%A3%85.jpg" 
+                                 alt="YOUNGJAE" loading="lazy">
+                        </div>
+                        <h3 class="member-preview-name">李炅潣(KYUNGMIN)</h3>
+                        <p class="member-preview-role">忙内</p>
+                    </div>
+                </div>
+               
+          
+            </div>
+        </section>
+        <section class="game-preview-section">
+            <div class="container">
+                <div class="game-preview-content" data-aos="fade-up">
+                    <div class="game-preview-text">
+                        <h2 class="section-title">TWS记忆配对游戏</h2>
+                        <p class="game-preview-description">
+                            挑战你的记忆力！找出所有匹配的TWS成员卡牌，看看你对TWS的了解有多深。
+                        </p>
+                        <a href="game.html" class="btn">开始游戏</a>
+                    </div>
+                    <div class="game-preview-image">
+                        <img src="./%E6%B8%B8%E6%88%8F.jpg" 
+                             alt="记忆游戏预览" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="music-player" class="music-player">
+        <div class="player-container">
+            <div class="player-info">
+                <img src="./mini1.jpg" alt="TWS专辑封面" class="album-cover">
+                <div class="track-info">
+                    <h3 class="track-title">plot twist</h3>
+                    <p class="track-artist">TWS</p>
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <button class="control-btn prev-btn" aria-label="上一首">
+                    <i class="ri-skip-back-line"></i>
+                </button>
+                <button class="control-btn play-btn" id="play-btn" aria-label="播放">
+                    <i class="ri-play-fill"></i>
+                </button>
+                <button class="control-btn next-btn" aria-label="下一首">
+                    <i class="ri-skip-forward-line"></i>
+                </button>
+            </div>
+            
+            <div class="player-progress">
+                <span class="current-time">0:00</span>
+                <input type="range" class="progress-bar" id="progress-bar" min="0" max="100" value="0" aria-label="播放进度">
+                <span class="duration">3:25</span>
+            </div>
+            
+            <div class="player-volume">
+                <button class="volume-btn" id="volume-btn" aria-label="音量">
+                    <i class="ri-volume-up-line"></i>
+                </button>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="80" aria-label="音量调节">
+            </div>
+            
+            <button class="player-close" id="player-close" aria-label="关闭播放器">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">TWS官方粉丝站</h3>
+                    <p class="footer-description">TWENTY FOUR SEVEN WITH US</p>
+                    <p class="footer-copyright">© 2024-2026 TWS Fansite. 本网站为粉丝创作，非官方站点。</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">关注TWS</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Weibo">
+                            <i class="ri-weibo-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="1.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof Swiper !== 'undefined') {
+                const albumsSwiper = new Swiper('.albums-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        576: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        992: {
+                            slidesPerView: 3,
+                        },
+                    },
+                });
+            }
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
